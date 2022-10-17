@@ -1,0 +1,15 @@
+type Bucket {
+  id: ID!
+  name: String!
+  category: String
+}
+
+# The Root Query for the application
+type Query {
+  recentBuckets(count: Int, offset: Int): [Bucket]
+}
+
+# The Root Mutation for the application
+type Mutation {
+  createBucket(name: String!, category: String): Bucket!
+}
